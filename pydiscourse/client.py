@@ -147,17 +147,17 @@ class DiscourseClient(object):
             ????
 
         """
-        r = self._get("/users/hp.json")
-        challenge = r["challenge"][::-1]  # reverse challenge, discourse security check
-        confirmations = r["value"]
+        # r = self._get("/users/hp.json")
+        # challenge = r["challenge"][::-1]  # reverse challenge, discourse security check
+        # confirmations = r["value"]
         return self._post(
             "/users",
             name=name,
             username=username,
             email=email,
             password=password,
-            password_confirmation=confirmations,
-            challenge=challenge,
+            # password_confirmation=confirmations,
+            # challenge=challenge,
             **kwargs
         )
 
